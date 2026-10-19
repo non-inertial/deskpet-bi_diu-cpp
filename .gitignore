@@ -1,0 +1,11 @@
+*.log
+
+test_clean_run.ps1
+test_in_sandbox.wsb
+winDeployQt_run.bat
+
+backup/
+build/
+
+.venv/
+.vscode/

@@ -1,0 +1,16 @@
+9.25~9.26
+    参考官方教程编写了 0-1-helloworld
+9.26
+    参考官方的教程 "File System" 完成了 1-1-drag
+    用ds完成了 pyside继承树.html
+9.27
+    完成了 1-2-get_mouse_local 和 1-3-get_mosue_global
+9.28
+    完成了动图展示 1-4-display_image
+    用ds完成了 qml继承树.html
+    完成了鼠标样式更改 1-5-change_mosue_style
+        其中用ds完成了光标样式的修复. 原本的光标
+    加入了右键退出功能 1-6-exit
+9.29
+    编写了有限状态机, 以备后续互动 1-7-FSM
+    用ds完成了
