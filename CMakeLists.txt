@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.16)
 # Use the windres that belongs to the compiler we are building with. Without
 # this, PATH decides, and with MSYS2 on the PATH its windres gets picked up:
 # it fails with "preprocessing failed" on the resource file of a MinGW 13.1
-# build. Must happen before project(), which is where CMake locks it in.
+# build. Must happen before project(), which is where CMake locks it in. 
 if(CMAKE_CXX_COMPILER)
     get_filename_component(_compiler_dir "${CMAKE_CXX_COMPILER}" DIRECTORY)
     if(EXISTS "${_compiler_dir}/windres.exe")
