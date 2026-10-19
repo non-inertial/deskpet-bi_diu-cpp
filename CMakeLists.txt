@@ -14,17 +14,16 @@ endif()
 project(ver_2 VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-# Official Qt 6.9.3 (downloaded with aqtinstall). The MSYS2 Qt it replaced was
-# built with ICU, which dragged in icudt78.dll and 36 MB of data files.
-# Switch back to "C:/msys64/ucrt64" to build against the MSYS2 one again.
-set(CMAKE_PREFIX_PATH "C:/Qt/6.9.3/mingw_64")
+# The project builds against the Qt that comes with MSYS2 (ucrt64). The
+# official Qt 6.9.3 variant - no ICU, smaller deployment - lives in the
+# backup folder; the two installations must not be mixed.
+set(CMAKE_PREFIX_PATH "C:/msys64/ucrt64")
 
-# Default to a release build. Without this, a wiped CMakeCache.txt (the deploy
-# script deletes it) leaves the build type empty, and a Debug build makes the
-# exe 4.6 MB instead of 0.6 MB because of the debug information. A build type
-# given explicitly on the command line or by the IDE still wins over this.
+# Default to a debug build: this folder is the development setup. The release
+# build (official Qt, stripped, about 22 MB packaged) is made from the backup
+# folder. A build type given on the command line or by the IDE still wins.
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
-    set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
+    set(CMAKE_BUILD_TYPE Debug CACHE STRING "Build type" FORCE)
 endif()
 
 # Keep the release binary small: drop unused sections and strip the symbol
